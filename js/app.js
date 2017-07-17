@@ -17,7 +17,7 @@
             if(arr.length===0){
                 id=1;
             }else{
-                id=arr.length+1;
+                id=arr[arr.length-1].id+1;
             }
 
             arr.push({ id: id, name: $scope.newTodo, isCompleted: false})
