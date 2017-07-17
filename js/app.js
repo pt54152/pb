@@ -10,7 +10,19 @@
             { id: 3, name: '打豆豆', isCompleted: false },
             { id: 4, name: '豆豆是谁', isCompleted: false}
         ]
-        this.arr=arr;
+        $scope.arr=arr;
+        // 2 添加任务
+        $scope.sumbit= function () {
+            var id;
+            if(arr.length===0){
+                id=1;
+            }else{
+                id=arr.length+1;
+            }
+
+            arr.push({ id: id, name: $scope.newTodo, isCompleted: false})
+            $scope.newTodo='';
+        }
 
 
     }
