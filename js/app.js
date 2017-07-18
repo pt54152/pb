@@ -1,8 +1,8 @@
 (function (angular) {
 	'use strict';
     angular.module('todoApp',[])
-            .controller('TodoController',['$scope',todoHandler])
-    function todoHandler($scope){
+            .controller('TodoController',['$scope','$location',todoHandler])
+    function todoHandler($scope,$location){
         // 1 展示任务列表
         var arr=[
             { id: 1, name: '吃饭', isCompleted: false },
@@ -87,9 +87,27 @@
             }
             return count;
         }
-        
+        // 8 显示不同状态的任务 以及当前任务高亮处理
+        $scope.isSelected=undefined;
+        $scope.location=$location;
+        $scope.$watch('location.url()',function(newValue,oldValue){
+            $scope.isSelected=false;
+            switch(newValue){
+                case '/':
+                    $scope.isSelected=undefined;
+                    break;
+                case '/active':
+                    $scope.isSelected=false;
+                    break;
+                case '/completed':
+                    $scope.isSelected=true;
+                    break;
+            }
+
+        })
 
 
     }
+
 
 })(angular);
