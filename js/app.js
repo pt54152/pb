@@ -48,7 +48,19 @@
                arr[i].isCompleted=$scope.isCompleteAll;
             }
         };
+        $scope.complete=function(){
+            for(var i=0;i<arr.length;i++){
+                if(!arr[i].isCompleted){
+                    $scope.isCompleteAll=false;
+                    break;
+                }else{
+                    $scope.isCompleteAll=true;
+                }
+            }
+        }
         
+        // 6.1 清除已完成任务
+
         
 
 
