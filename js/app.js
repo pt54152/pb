@@ -40,7 +40,6 @@
         $scope.editSave=function(){
             $scope.editingId=-1;
         }
-
         // 5 切换任务选中状态
         $scope.isCompleteAll=false;
         $scope.completeAll=function(){
@@ -58,9 +57,26 @@
                 }
             }
         }
-        
-        // 6.1 清除已完成任务
-
+        // 6 清除已完成任务
+        $scope.delComplete=function(){
+            var newArr=[];
+            for (var i=0;i<arr.length;i++){
+                if(arr[i].isCompleted===false){
+                    newArr.push(arr[i]);
+                }
+            }
+            $scope.arr=arr=newArr;
+        }
+        $scope.isShow=function(){
+            var res=false;
+            for(var i=0;i<arr.length;i++){
+                if(arr[i].isCompleted){
+                    res=true;
+                    break;
+                }
+            }
+            return res;
+        }
         
 
 
