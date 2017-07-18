@@ -77,6 +77,16 @@
             }
             return res;
         }
+        // 7 显示未完成任务数
+        $scope.getCount=function(){
+            var count=0;
+            for (var i=0;i<arr.length;i++){
+                if(arr[i].isCompleted===false){
+                    count++;
+                }
+            }
+            return count;
+        }
         
 
 
