@@ -30,7 +30,7 @@
                     <div class="view">
                         <input class="toggle" type="checkbox" ng-model="item.isCompleted">
                         <label ng-bind="item.name"></label>
-                        <button class="destroy"></button>
+                        <button class="destroy" ng-click=del(item.id)></button>
                     </div>
                     <input class="edit" value="Create a TodoMVC template">
                 </li>

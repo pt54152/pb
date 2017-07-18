@@ -12,6 +12,7 @@
         ]
         $scope.arr=arr;
         // 2 添加任务
+        $scope.newTodo='';
         $scope.sumbit= function () {
             var id;
             if(arr.length===0){
@@ -19,9 +20,17 @@
             }else{
                 id=arr[arr.length-1].id+1;
             }
-
             arr.push({ id: id, name: $scope.newTodo, isCompleted: false})
             $scope.newTodo='';
+        }
+        // 3 删除一条任务
+        $scope.del=function(id){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i].id===id){
+                    arr.splice(i,1);
+                    return;
+                }
+            }
         }
 
 
