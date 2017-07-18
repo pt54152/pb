@@ -32,6 +32,15 @@
                 }
             }
         }
+        // 4 修改任务
+        $scope.editingId=-1;
+        $scope.edit=function(id){
+            $scope.editingId=id;
+        }
+        $scope.editSave=function(){
+            $scope.editingId=-1;
+        }
+        
 
 
     }
