@@ -40,6 +40,15 @@
         $scope.editSave=function(){
             $scope.editingId=-1;
         }
+
+        // 5 切换任务选中状态
+        $scope.isCompleteAll=false;
+        $scope.completeAll=function(){
+            for (var i=0;i<arr.length;i++){
+               arr[i].isCompleted=$scope.isCompleteAll;
+            }
+        };
+        
         
 
 
